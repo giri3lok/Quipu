@@ -31,5 +31,15 @@ jobs:
       uses: actions/setup-node@v3  
     - name: Run Copecept tests
       run: npm run codeceptjs
+    - name: Generate Allure Report
+      run: |
+        npx allure generate --clean -o allure-report
+        npx allure open allure-report
+
+    - name: Upload Allure Report
+      uses: actions/upload-artifact@v2
+      with:
+        name: allure-report
+        path: allure-report
     
 
