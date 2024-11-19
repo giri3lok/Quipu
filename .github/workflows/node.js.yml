@@ -29,6 +29,8 @@ jobs:
     - uses: microsoft/playwright-github-action@v1
     - name: run CodeceptJS tests
       uses: actions/setup-node@v3  
+    - name: Install Allure CLI
+      run: npm install --save-dev allure-commandline
     - name: Run Copecept tests
       run: npm run codeceptjs
     - name: Generate Allure Report
