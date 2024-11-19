@@ -1,5 +1,8 @@
 exports.config = {
-  output: "./output",
+  output: './output',
+  allure: {
+    output: './output/allure-results'
+  },
   helpers: {
     Playwright: {
       browser: "chromium",
