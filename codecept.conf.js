@@ -1,8 +1,5 @@
 exports.config = {
-  output: './output',
-  allure: {
-    output: './output/allure-results'
-  },
+  output: './output',  
   helpers: {
     Playwright: {
       browser: "chromium",
@@ -28,6 +25,9 @@ exports.config = {
   gherkin: {
     features: "./features/*.feature",
     steps: "./step_definitions/*.js",
+  },
+  allure: {
+    output: './output/allure-results'
   },
   plugins: {
     allure: {
