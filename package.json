@@ -18,8 +18,8 @@
         "@codeceptjs/examples": "^1.2.4",
         "@codeceptjs/ui": "^1.2.0",
         "allure-commandline": "^2.32.0",
-        "codeceptjs": "^3.6.8",
-        "playwright": "^1.49.1"
+        "codeceptjs": "^3.6.7",
+        "playwright": "^1.48.1"
     },
     "dependencies": {
         "codeceptjs-chai": "^2.3.5"
