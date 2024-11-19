@@ -14,11 +14,14 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
       - name: Install dependencies
-        run: npm install --save-dev @codeceptjs/allure-legacy @codeceptjs/configure @codeceptjs/examples @codeceptjs/ui allure-commandline codeceptjs playwright
-      - name: Install chai dependencies
-        run: npm install --save codeceptjs-chai --force
-      - name: edit Fix Errors
-        run: npm audit fix --legacy-peer-deps --force
-      - name:	To run tests headlessly 
+        run: npm ci
+      - name: Install dependencies
+        run: npm install
+      - name: Install playwright browsers
+        run: npx playwright install --with-deps
+      - uses: microsoft/playwright-github-action@v1
+      - name: run CodeceptJS
+        uses: actions/setup-node@v3  
+      - name: Run Copecept tests
         run: npm run codeceptjs
 
