@@ -34,10 +34,9 @@ jobs:
     - name: Generate Allure Report
       run: |
         npx allure generate --clean -o allure-report
-        npx allure open allure-report
 
     - name: Upload Allure Report
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4  # Updated to v4
       with:
         name: allure-report
         path: allure-report
