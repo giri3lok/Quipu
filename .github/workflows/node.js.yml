@@ -34,12 +34,11 @@ jobs:
     - name: Generate Allure Report
       run: |
         npx allure generate --clean -o allure-report
-      if: always() 
+      if: always()  # This ensures this step runs regardless of previous failures
+
     - name: Upload Allure Report
-      uses: actions/upload-artifact@v4  # Updated to v4
+      uses: actions/upload-artifact@v4
       with:
         name: allure-report
         path: allure-report
-      if: always()  
-    
-
+      if: always()  # Ensures the report is uploaded even if the tests failed
