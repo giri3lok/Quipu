@@ -2,8 +2,7 @@
 node_modules/
 
 
-output/
-output/allure-results/
+
 
 # Allure reports
 allure-report/
