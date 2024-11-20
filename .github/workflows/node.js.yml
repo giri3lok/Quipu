@@ -29,7 +29,7 @@ jobs:
     - name: run CodeceptJS tests
       uses: actions/setup-node@v3  
     - name: Install Allure CLI
-      run: npm install --save-dev allure-commandline
+      run: npm install --save-dev allure-commandline --legacy-peer-deps
     - name: Run Copecept tests
       run: npm run codeceptjs
     - name: Generate Allure Report
