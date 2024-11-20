@@ -65,6 +65,7 @@ exports.config = {
       timeout: 0,
     },
   ],
+  reporter: "allure-playwright",
   tests: "./features/*",
   name: "Oranum",
   
