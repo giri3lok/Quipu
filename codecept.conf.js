@@ -32,9 +32,7 @@ exports.config = {
     features: "./features/*.feature",
     steps: "./step_definitions/*.js",
   },
-  allure: {
-    output: './output/allure-results'
-  },
+ 
   plugins: {
     allure: {
       enabled: true,
