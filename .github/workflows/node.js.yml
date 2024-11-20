@@ -38,7 +38,7 @@ jobs:
       if: always()  # This ensures this step runs regardless of previous failures
 
     - name: Upload Allure Report
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v2
       with:
         name: allure-report
         path: allure-report

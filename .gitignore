@@ -5,6 +5,6 @@ node_modules/
 
 
 # Allure reports
-allure-report/
+#allure-report/
 /playwright-report/
 /playwright/.cache/
