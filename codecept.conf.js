@@ -1,6 +1,6 @@
 exports.config = {
   output: './output', 
-  reporter: "allure-playwright", 
+ 
   helpers: {
     Playwright: {
       browser: "chromium",
@@ -18,10 +18,15 @@ exports.config = {
     I: "./steps_file.js",
     homePage: "./pages/homePage.js",
   },
-  mocha: {},
+  
   bootstrap: null,
   timeout: null,
   teardown: null,
+  mocha: {
+    reporterOptions: {
+      reportDir: './output',
+    },
+  },
   hooks: [],
   gherkin: {
     features: "./features/*.feature",
