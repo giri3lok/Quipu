@@ -1,5 +1,6 @@
 exports.config = {
-  output: './output',  
+  output: './output', 
+  reporter: "allure-playwright", 
   helpers: {
     Playwright: {
       browser: "chromium",
@@ -65,7 +66,7 @@ exports.config = {
       timeout: 0,
     },
   ],
-  reporter: "allure-playwright",
+  
   tests: "./features/*",
   name: "Oranum",
   
