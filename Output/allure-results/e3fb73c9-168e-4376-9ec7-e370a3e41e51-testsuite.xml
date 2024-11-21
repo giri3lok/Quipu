@@ -1,0 +1,81 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1732138125861' stop='1732138129081'>
+    <name>Select a Category @psychics-by-category</name>
+    <title>Select a Category @psychics-by-category</title>
+    <test-cases>
+        <test-case start='1732138125861' status='failed' stop='1732138128520'>
+            <name>Select a category with its matching psychics {"category":"Energy work"} @category-results</name>
+            <title>Select a category with its matching psychics {"category":"Energy work"} @category-results</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='codeceptjs'/>
+                <label name='tag' value='@psychics-by-category'/>
+                <label name='tag' value='@category-results'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1732138125920' status='passed' stop='1732138128074'>
+                    <name>Given I navigate to Oranum web application home page ""</name>
+                    <title>Given I navigate to Oranum web application home page ""</title>
+                    <attachments/>
+                    <steps>
+                        <step start='1732138125920' status='passed' stop='1732138128074'>
+                            <name>On homePage: verify home page </name>
+                            <title>On homePage: verify home page </title>
+                            <attachments/>
+                            <steps>
+                                <step start='1732138125920' status='passed' stop='1732138127975'>
+                                    <name>I am on page "/"</name>
+                                    <title>I am on page "/"</title>
+                                    <attachments/>
+                                    <steps/>
+                                </step>
+                                <step start='1732138127975' status='passed' stop='1732138127994'>
+                                    <name>I grab text from "#home"</name>
+                                    <title>I grab text from "#home"</title>
+                                    <attachments/>
+                                    <steps/>
+                                </step>
+                                <step start='1732138127995' status='passed' stop='1732138128074'>
+                                    <name>I see element "ul[class*=sidebar-menu]"</name>
+                                    <title>I see element "ul[class*=sidebar-menu]"</title>
+                                    <attachments/>
+                                    <steps/>
+                                </step>
+                            </steps>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1732138128074' status='failed' stop='1732138128520'>
+                    <name>When I choose a "Energy work" ""</name>
+                    <title>When I choose a "Energy work" ""</title>
+                    <attachments/>
+                    <steps>
+                        <step start='1732138128074' status='failed' stop='1732138128520'>
+                            <name>On homePage: choose category "Energy work"</name>
+                            <title>On homePage: choose category "Energy work"</title>
+                            <attachments/>
+                            <steps>
+                                <step start='1732138128074' status='passed' stop='1732138128519'>
+                                    <name>I click "Energy work", ".sidebar-filters"</name>
+                                    <title>I click "Energy work", ".sidebar-filters"</title>
+                                    <attachments/>
+                                    <steps/>
+                                </step>
+                            </steps>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments>
+                <attachment title='Main session - Last Seen Screenshot' source='16b61c31-a915-47b5-a6a1-a1549deaf5ab-attachment.png' type='image/png' size='1972031'/>
+            </attachments>
+            <failure>
+                <message>No steps matching "the profile match the current category"</message>
+                <stack-trace>Error: No steps matching "the profile match the current category"
+                    at matchStep (C:\Users\Oranum\node_modules\codeceptjs\lib\interfaces\bdd.js:50:9)
+                    at runSteps (C:\Users\Oranum\node_modules\codeceptjs\lib\interfaces\gherkin.js:55:18)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

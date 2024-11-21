@@ -1,4 +1,5 @@
 const { I } = inject();
+
 module.exports = {
   webElements: {
     homepage: "#home",
@@ -17,11 +18,11 @@ module.exports = {
     getCreditBtn: "div[data-id='buyCreditIcon']",
     getJoinBth: "button[data-testid='joinNowButtonApplet']",
     getAddToFavBth: "div[data-testid='favoriteIconLeft']",
-    getSurpriceIcon: "div[data-id='surpriseIcon']",
-    getSurpriceOneCredit: "[data-testid='surpriseListBottom']>:nth-of-type(1)",
-    getSurpricefiveCredit: "[data-testid='surpriseListBottom']>:nth-of-type(2)",
-    getSurpriceTenCredit: "[data-testid='surpriseListBottom']>:nth-of-type(3)",
-    getSurpriceTwentyFiveCredit:
+    getSurpriseIcon: "div[data-id='surpriseIcon']",
+    getSurpriseOneCredit: "[data-testid='surpriseListBottom']>:nth-of-type(1)",
+    getSurpriseFiveCredit: "[data-testid='surpriseListBottom']>:nth-of-type(2)",
+    getSurpriseTenCredit: "[data-testid='surpriseListBottom']>:nth-of-type(3)",
+    getSurpriseTwentyFiveCredit:
       "[data-testid='surpriseListBottom']>:nth-of-type(4)",
     getStartSessionBtn: "div[data-arma-state='private']",
     surpriseListBottom: "[data-testid='surpriseListBottom']>.mc_surprise_item",
@@ -34,23 +35,30 @@ module.exports = {
       "article[data-type='performer'] .thumb-data-willingness-list",
   },
 
+  // Verification Methods
   async verifyHomePage() {
     I.amOnPage("/");
     await I.grabTextFrom(this.webElements.homepage);
     I.seeElement(this.webElements.sliderbar);
   },
 
+  async verifyHomePageWithGuestUser() {
+    I.amOnPage("/");
+    await I.grabTextFrom(this.webElements.homepage);
+    I.seeElement(this.webElements.loginButton);
+  },
+
+  // Search Methods
   typeInSearch(searchTerm) {
-    this.searchTerm = searchTerm;
     I.seeElement(this.webElements.searchPlaceholder);
     I.fillField(this.webElements.searchPlaceholder, searchTerm);
     I.wait(2);
   },
 
-  async matchName() {
-    const ele = await I.grabTextFromAll(this.webElements.newresult);
-    const matcher = new RegExp(this.searchTerm, "i");
-    ele.forEach((text) => {
+  async matchName(searchTerm) {
+    const elements = await I.grabTextFromAll(this.webElements.newresult);
+    const matcher = new RegExp(searchTerm, "i");
+    elements.forEach((text) => {
       I.assertMatchRegex(text, matcher);
     });
   },
@@ -61,50 +69,33 @@ module.exports = {
 
   async countAndValidatePerformerNameElements(name) {
     I.seeElement(this.webElements.userPageTitle, 5);
-    const elements = await I.grabTextFromAll(
-      this.webElements.performerNameElements
+    const elements = await I.grabTextFromAll(this.webElements.performerNameElements);
+    elements.forEach((text) => {
+      I.assertContains(text.toLowerCase(), name.toLowerCase());
+    });
+    return elements.length;
+  },
+
+  // Category Methods
+  async chooseCategory(category) {
+    await I.click(category, this.webElements.categorySideFilter);
+  },
+
+  async validateCategoryFilter(selectedCategory) {
+    const categoryList = await I.grabTextFromAll(
+      this.webElements.performerCategoryList
     );
-    const count = elements.length;
-    for (const text of elements) {
-      I.assertContains(text.toLowerCase(), name);
-    }
-    I.assertEquals(elements.length, count);
-    return count;
+    categoryList.forEach((text) => {
+      I.assertContains(text, selectedCategory);
+      const splitCategories = text.split("\n");
+      const uniqueCategories = new Set(splitCategories);
+      I.assertEqual(splitCategories.length, uniqueCategories.size);
+    });
   },
 
-  async checkLiveStream() {
-    await I.click(this.webElements.checkLiveStatus);
-  },
-  async verifyHomePagewithasGuestUser() {
-    I.amOnPage("/");
-    await I.grabTextFrom(this.webElements.homepage);
-    I.seeElement(this.webElements.loginButton);
-  },
-
-  async navigateToExpectedUrlAndCheckLiveStatus() {
-    const elementCount = I.seeElement(this.webElements.checkLiveStatus);
-    await I.click(this.webElements.checkLiveStatus);
-    await I.seeElement(this.webElements.checkbedgeLive);
-  },
-
-  async clickGetCreditBtn() {
-    await I.click(this.webElements.getCreditBtn);
-  },
-
-  async signInBtn() {
-    await I.waitForVisible, (this.webElements.getJoinBth, timeout._10s);
-    I.waitForText("JOIN NOW");
-  },
-
-  async addToFav() {
-    await I.click(this.webElements.getAddToFavBth);
-  },
-  async getStartedSessionBtn() {
-    await I.forceClick(this.webElements.getStartSessionBtn);
-  },
-
-  async getSurpriceModel() {
-    await I.click(this.webElements.getSurpriceIcon);
+  // Surprise Modal Methods
+  async openSurpriseModal() {
+    await I.click(this.webElements.getSurpriseIcon);
   },
 
   async clickAndCheckSurpriseElements() {
@@ -114,30 +105,34 @@ module.exports = {
 
     for (let i = 1; i <= numberOfElements; i++) {
       const elementSelector = `${this.webElements.surpriseListBottom}:nth-of-type(${i})`;
-      // Click on the nth element
       await I.click(elementSelector);
-      // Check if mainLoginSignUpOverlayApplet is present
       await I.seeElement(this.webElements.mainLoginSignUpOverlayApplet);
-      // Perform click to close the dialog
       await I.click(this.webElements.closeDialogButton);
-      await I.wait(1)
+      I.wait(1);
     }
   },
 
-  async chooseCategory(category) {
-    await I.click(category, this.webElements.categorySideFilter);
-    this.selectedCategory = category;
+  // Live Stream Methods
+  async checkLiveStream() {
+    await I.click(this.webElements.checkLiveStatus);
+    await I.seeElement(this.webElements.checkbedgeLive);
   },
-  async validateCategoryFilter() {
-    const categorylist = await I.grabTextFromAll(
-      this.webElements.performerCategoryList
-    );
-    categorylist.forEach((element) => {
-      I.assertContain(element, this.selectedCategory);
-      //unique contegory
-      const cateList = element.split("\n");
-      const uniquecateList = new Set(cateList);
-      I.assertEqual(cateList.length, uniquecateList.size);
-    });
+
+  // Additional Actions
+  async clickGetCreditButton() {
+    await I.click(this.webElements.getCreditBtn);
+  },
+
+  async clickJoinNowButton() {
+    await I.waitForVisible(this.webElements.getJoinBth, 10);
+    I.waitForText("JOIN NOW");
+  },
+
+  async addToFavorites() {
+    await I.click(this.webElements.getAddToFavBth);
+  },
+
+  async startSession() {
+    await I.forceClick(this.webElements.getStartSessionBtn);
   },
 };

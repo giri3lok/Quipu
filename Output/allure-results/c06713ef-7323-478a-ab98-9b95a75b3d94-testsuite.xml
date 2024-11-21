@@ -1,0 +1,119 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1732187969361' stop='1732187970148'>
+    <name>Navigate to a Psychic's Livestream</name>
+    <title>Navigate to a Psychic's Livestream</title>
+    <test-cases>
+        <test-case start='1732187969366' status='failed' stop='1732187969446'>
+            <name>Validate for live stream psychic sign up first to Get Free Credits @signup-to-get-credits</name>
+            <title>Validate for live stream psychic sign up first to Get Free Credits @signup-to-get-credits</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='codeceptjs'/>
+                <label name='tag' value='@signup-to-get-credits'/>
+            </labels>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Main session - Last Seen Screenshot' source='02ac9ca4-3dfa-4417-a242-5e303751868e-attachment.png' type='image/png' size='8588'/>
+            </attachments>
+            <failure>
+                <message>homePage.verifyHomePagewithasGuestUser is not a function</message>
+                <stack-trace>TypeError: homePage.verifyHomePagewithasGuestUser is not a function
+                    at C:\Users\Oranum\step_definitions\live_stream.js:3:18
+                    at runSteps (C:\Users\Oranum\node_modules\codeceptjs\lib\interfaces\gherkin.js:77:15)
+                    at Test.&lt;anonymous> (C:\Users\Oranum\node_modules\codeceptjs\lib\interfaces\gherkin.js:130:48)
+                    at test.fn (C:\Users\Oranum\node_modules\codeceptjs\lib\scenario.js:79:14)
+                    at callFnAsync (C:\Users\Oranum\node_modules\mocha\lib\runnable.js:392:21)
+                    at Runnable.run (C:\Users\Oranum\node_modules\mocha\lib\runnable.js:336:7)
+                    at Runner.runTest (C:\Users\Oranum\node_modules\mocha\lib\runner.js:677:10)
+                    at C:\Users\Oranum\node_modules\mocha\lib\runner.js:800:12
+                    at next (C:\Users\Oranum\node_modules\mocha\lib\runner.js:592:14)
+                    at C:\Users\Oranum\node_modules\mocha\lib\runner.js:602:7</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1732187969574' status='failed' stop='1732187969636'>
+            <name>Validate for live stream psychic sign up first to add favorites @signup-to-add-favorites</name>
+            <title>Validate for live stream psychic sign up first to add favorites @signup-to-add-favorites</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='codeceptjs'/>
+                <label name='tag' value='@signup-to-add-favorites'/>
+            </labels>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Main session - Last Seen Screenshot' source='d74b0746-419f-4137-9a05-f4ccca197a63-attachment.png' type='image/png' size='8588'/>
+            </attachments>
+            <failure>
+                <message>homePage.verifyHomePagewithasGuestUser is not a function</message>
+                <stack-trace>TypeError: homePage.verifyHomePagewithasGuestUser is not a function
+                    at C:\Users\Oranum\step_definitions\live_stream.js:3:18
+                    at runSteps (C:\Users\Oranum\node_modules\codeceptjs\lib\interfaces\gherkin.js:77:15)
+                    at Test.&lt;anonymous> (C:\Users\Oranum\node_modules\codeceptjs\lib\interfaces\gherkin.js:130:48)
+                    at test.fn (C:\Users\Oranum\node_modules\codeceptjs\lib\scenario.js:79:14)
+                    at callFnAsync (C:\Users\Oranum\node_modules\mocha\lib\runnable.js:392:21)
+                    at Runnable.run (C:\Users\Oranum\node_modules\mocha\lib\runnable.js:336:7)
+                    at Runner.runTest (C:\Users\Oranum\node_modules\mocha\lib\runner.js:677:10)
+                    at C:\Users\Oranum\node_modules\mocha\lib\runner.js:800:12
+                    at next (C:\Users\Oranum\node_modules\mocha\lib\runner.js:592:14)
+                    at C:\Users\Oranum\node_modules\mocha\lib\runner.js:602:7</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1732187969771' status='failed' stop='1732187969829'>
+            <name>Validate for live stream psychic sign up first to get surprise button @signup-to-a-suprise-buttons</name>
+            <title>Validate for live stream psychic sign up first to get surprise button @signup-to-a-suprise-buttons</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='codeceptjs'/>
+                <label name='tag' value='@signup-to-a-suprise-buttons'/>
+            </labels>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Main session - Last Seen Screenshot' source='eee6530c-4d33-4c25-98bd-bfc01bf703a8-attachment.png' type='image/png' size='8588'/>
+            </attachments>
+            <failure>
+                <message>homePage.verifyHomePagewithasGuestUser is not a function</message>
+                <stack-trace>TypeError: homePage.verifyHomePagewithasGuestUser is not a function
+                    at C:\Users\Oranum\step_definitions\live_stream.js:3:18
+                    at runSteps (C:\Users\Oranum\node_modules\codeceptjs\lib\interfaces\gherkin.js:77:15)
+                    at Test.&lt;anonymous> (C:\Users\Oranum\node_modules\codeceptjs\lib\interfaces\gherkin.js:130:48)
+                    at test.fn (C:\Users\Oranum\node_modules\codeceptjs\lib\scenario.js:79:14)
+                    at callFnAsync (C:\Users\Oranum\node_modules\mocha\lib\runnable.js:392:21)
+                    at Runnable.run (C:\Users\Oranum\node_modules\mocha\lib\runnable.js:336:7)
+                    at Runner.runTest (C:\Users\Oranum\node_modules\mocha\lib\runner.js:677:10)
+                    at C:\Users\Oranum\node_modules\mocha\lib\runner.js:800:12
+                    at next (C:\Users\Oranum\node_modules\mocha\lib\runner.js:592:14)
+                    at C:\Users\Oranum\node_modules\mocha\lib\runner.js:602:7</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1732187969965' status='failed' stop='1732187970031'>
+            <name>Validate for live stream psychic sign up first to get start session @signup-to-get-Start-session</name>
+            <title>Validate for live stream psychic sign up first to get start session @signup-to-get-Start-session</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='codeceptjs'/>
+                <label name='tag' value='@signup-to-get-Start-session'/>
+            </labels>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Main session - Last Seen Screenshot' source='e66e17c8-7ab9-4c2a-a250-79b58c65358b-attachment.png' type='image/png' size='8588'/>
+            </attachments>
+            <failure>
+                <message>homePage.verifyHomePagewithasGuestUser is not a function</message>
+                <stack-trace>TypeError: homePage.verifyHomePagewithasGuestUser is not a function
+                    at C:\Users\Oranum\step_definitions\live_stream.js:3:18
+                    at runSteps (C:\Users\Oranum\node_modules\codeceptjs\lib\interfaces\gherkin.js:77:15)
+                    at Test.&lt;anonymous> (C:\Users\Oranum\node_modules\codeceptjs\lib\interfaces\gherkin.js:130:48)
+                    at test.fn (C:\Users\Oranum\node_modules\codeceptjs\lib\scenario.js:79:14)
+                    at callFnAsync (C:\Users\Oranum\node_modules\mocha\lib\runnable.js:392:21)
+                    at Runnable.run (C:\Users\Oranum\node_modules\mocha\lib\runnable.js:336:7)
+                    at Runner.runTest (C:\Users\Oranum\node_modules\mocha\lib\runner.js:677:10)
+                    at C:\Users\Oranum\node_modules\mocha\lib\runner.js:800:12
+                    at next (C:\Users\Oranum\node_modules\mocha\lib\runner.js:592:14)
+                    at C:\Users\Oranum\node_modules\mocha\lib\runner.js:602:7</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
